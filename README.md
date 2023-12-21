@@ -1,6 +1,6 @@
-# Cookiecutter Conda Data Science
+# Cookiecutter Kaggle Conda Data Science
 
-_A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
+_A logical, reasonably standardized, but flexible project structure for participating in Kaggle competitions, as a team._
 
 ## TL;DR
 
