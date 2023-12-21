@@ -8,27 +8,19 @@ channels:
   - defaults
 dependencies:
   - kaggle
+  - python-dotenv
   - black
   - invoke
   - jupyter
   - jupyterlab
-  - keras
-  - lightgbm
   - matplotlib
-  - missingno
   - nbdime
   - numpy
   - pandas
-  - pandas-flavor
-  - pandas-profiling
   - pip
   - plotly
   - pyjanitor
-  - pylint
   - pyprojroot
   - python={{ cookiecutter.python_version }}
-  - python-dotenv
-  - scikit-learn
   - seaborn
   - statsmodels
-  - tensorflow

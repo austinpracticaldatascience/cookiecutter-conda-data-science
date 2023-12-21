@@ -1,9 +1,22 @@
 # {{ cookiecutter.project_name }} guide installation
 
+## TL;DR
+
+```bash
+mamba env create -f environment.yml
+activate {{ cookiecutter.project_slug }}
+cd {{ cookiecutter.project_slug }}
+pip install --editable .
+echo "KAGGLE_USERNAME=<your_username>" > .env
+echo "KAGGLE_KEY=<your_api_key>" >> .env
+invoke getdata
+```
+
 ## Prerequisites
 
 - [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html)
 - Optional [Mamba](https://mamba.readthedocs.io/en/latest/)
+- Optional [MicroMamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)
 
 ## Create environment
 
@@ -16,6 +29,18 @@ or
 
 ```bash
 mamba env create -f environment.yml
+activate {{ cookiecutter.project_slug }}
+```
+or 
+
+```bash
+micromamba env create -f environment.yml
+activate {{ cookiecutter.project_slug }}
+```
+
+#### If having installation issues try
+```bash
+micromamba env create -f environment_minimal.yml
 activate {{ cookiecutter.project_slug }}
 ```
 
@@ -45,7 +70,7 @@ from {{ cookiecutter.project_module_name }}.utils.paths import data_dir
 data_dir()
 ```
 
-## Set up Git diff for notebooks and lab
+## Set up Git diff for notebooks and lab (OPTIONAL)
 
 We use [nbdime](https://nbdime.readthedocs.io/en/stable/index.html) for diffing and merging Jupyter notebooks.
 
@@ -74,7 +99,7 @@ jupyter labextension install nbdime-jupyterlab
 
 You may need to rebuild the extension : `jupyter lab build`
 
-## Set up Plotly for Jupyterlab
+## Set up Plotly for Jupyterlab (OPTIONAL)
 
 Plotly works in notebook but further steps are needed for it to work in Jupyterlab :
 
@@ -102,22 +127,8 @@ List of all tasks for project :
 $ invoke -l
 
 Available tasks:
-
-  lab     Launch Jupyter lab
-```
-
-Help on a particular task :
-
-```
-$ invoke --help lab
-Usage: inv[oke] [--core-opts] notebook [--options] [other tasks here ...]
-
-Docstring:
-  Launch Jupyter lab
-
-Options:
-  -i STRING, --ip=STRING   IP to listen on, defaults to *
-  -p, --port               Port to listen on, defaults to 8888
+  getdata   Download and unzip data from Kaggle API
+  lab       Launch Jupyter lab
 ```
 
 You will find the definition of each task inside the `tasks.py` file, so you can add your own.

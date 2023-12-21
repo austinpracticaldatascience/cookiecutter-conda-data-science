@@ -2,6 +2,47 @@
 
 _A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
 
+## TL;DR
+
+### If creating a new project
+1. Ensure your Kaggle credentials / username & API key are set
+2. run:
+
+	```bash
+	pip install cookiecutter
+	
+	cookiecutter https://github.com/austinpracticaldatascience/cookiecutter-conda-data-science
+	```
+
+3. follow instructions on cookiecutter cli
+4. run:
+
+	```bash
+	cd <project_slug>
+		
+	mamba env create -f environment_minimal.yml
+		
+	mamba activate <project_slug>
+		
+	pip install --editable .
+		
+	invoke getdata
+    ```
+5. *IMPORTANT*: Ensure you aren't exposing your API username & key in ```{{ cookiecutter.project_slug }}/.env```
+6. run:  
+    ```
+	git push <your-new-github-project-repo>
+	```
+7. Share that repo with the group
+
+### If cloning from an existing project
+1. Ensure you have either conda, mamba or micromamba installed
+- Ensure you have signed up for Kaggle & have your username and API key generated
+- Clone repo
+- Edit ```.env``` to your ```KAGGLE_USERNAME=``` and ```KAGGLE_KEY=```
+- Now follow the instructions in [install.md](https://github.com/austinpracticaldatascience/cookiecutter-conda-data-science/blob/main/%7B%7B%20cookiecutter.project_slug%20%7D%7D/install.md)
+- Run ```invoke getdata```
+
 ## Requirements
 
 - [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html)

@@ -1,12 +1,16 @@
 {
-    "project_name": "Cookiecutter Conda Data Science",
+    "competition_url": "",
+    "competition_slug": "{{ cookiecutter.competition_url.lower().replace('https://www.kaggle.com/competitions/', '') }}",
+    "competition_name": "{{ cookiecutter.competition_slug.replace('-', ' ').title() }}",
+    "project_name": "{{ 'APDS ' + cookiecutter.competition_name}}",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "project_module_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "project_author_name": "Your name (or your organization/company/team)",
-    "project_author_email": "Yout email (or your organization/company/team)",
+    "project_author_name": "Austin Practical Data Science",
+    "project_author_email": "austinpracticaldatascience@gmail.com",
     "project_description": "A short description of the project.",
-    "project_open_source_license": ["No license file", "MIT", "BSD-3-Clause"],
-    "project_packages": ["All", "Minimal"],
-    "python_version": "3.7",
-    "project_version": "0.1.0"
+    "project_open_source_license": "MIT",
+    "python_version": "3.12",
+    "project_version": "0.1.0",
+    "kaggle_username": "",
+    "kaggle_api_key": ""
 }
