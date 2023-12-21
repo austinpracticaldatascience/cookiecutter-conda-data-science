@@ -4,7 +4,15 @@ _A logical, reasonably standardized, but flexible project structure for particip
 
 ## TL;DR
 
-### If creating a new project
+### If cloning from an existing team competition repo
+1. Ensure you have either conda, mamba or micromamba installed
+2. Ensure you have signed up for Kaggle & have your username and API key generated
+3. Clone repo (not this one! The "child" repo)
+4. Edit ```.env``` to your ```KAGGLE_USERNAME=``` and ```KAGGLE_KEY=```
+5. Now follow the instructions in [install.md](https://github.com/austinpracticaldatascience/cookiecutter-conda-data-science/blob/main/%7B%7B%20cookiecutter.project_slug%20%7D%7D/install.md)
+6. Run ```invoke getdata```
+
+### If creating a new team competition project
 1. Ensure your Kaggle credentials / username & API key are set
 2. run:
 
@@ -35,13 +43,7 @@ _A logical, reasonably standardized, but flexible project structure for particip
 	```
 7. Share that repo with the group
 
-### If cloning from an existing project
-1. Ensure you have either conda, mamba or micromamba installed
-- Ensure you have signed up for Kaggle & have your username and API key generated
-- Clone repo
-- Edit ```.env``` to your ```KAGGLE_USERNAME=``` and ```KAGGLE_KEY=```
-- Now follow the instructions in [install.md](https://github.com/austinpracticaldatascience/cookiecutter-conda-data-science/blob/main/%7B%7B%20cookiecutter.project_slug%20%7D%7D/install.md)
-- Run ```invoke getdata```
+
 
 ## Requirements
 
