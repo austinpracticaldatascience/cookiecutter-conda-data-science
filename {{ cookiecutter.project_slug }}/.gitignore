@@ -61,8 +61,13 @@ target/
 # pyenv python configuration file
 .python-version
 
-# exclude data from source control by default
-/data/
+# exclude data files from source control by default
+# /data/
+data/**/*.zip
+data/**/*.csv
+data/**/*.json
+data/**/*.py
+data/**/*.so
 
 # ipynb checkpoints
 .ipynb_checkpoints
